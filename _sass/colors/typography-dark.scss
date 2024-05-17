@@ -12,13 +12,21 @@
 
     // modified
     --main-bg: rgb(40, 48, 68);
-    --mask-bg: rgb(81, 90, 108);
-    --main-border-color: rgb(57, 66, 83);
+    --mask-bg: rgb(57, 64, 90);
+    --main-border-color: rgb(59, 79, 88);
   
     /* Common color */
-    --text-color: rgb(175, 176, 177);
-    --text-muted-color: #868686;
-    --text-muted-hightlight-color: #aeaeae;
+
+    // original
+    // --text-color: rgb(175, 176, 177);
+    --text-color: rgb(238, 225, 179);
+
+    // --text-muted-color: #868686;
+    --text-muted-color: #ccc19a;
+
+    // --text-muted-hightlight-color: #aeaeae;
+    --text-muted-hightlight-color: #f0e6c2;
+
     --heading-color: #cccccc;
     --label-color: #a7a7a7;
     --blockquote-border-color: rgb(66, 66, 66);
