@@ -4,10 +4,16 @@
 
  @mixin dark-scheme {
     /* Framework color */
+
+    // original
     // --main-bg: rgb(27, 27, 30);
+    // --mask-bg: rgb(68, 69, 70);
+    // --main-border-color: rgb(44, 45, 45);
+
+    // modified
     --main-bg: rgb(40, 48, 68);
-    --mask-bg: rgb(68, 69, 70);
-    --main-border-color: rgb(44, 45, 45);
+    --mask-bg: rgb(81, 90, 108);
+    --main-border-color: rgb(57, 66, 83);
   
     /* Common color */
     --text-color: rgb(175, 176, 177);
