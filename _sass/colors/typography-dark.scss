@@ -5,34 +5,15 @@
  @mixin dark-scheme {
     /* Framework color */
 
-    // original
-    // --main-bg: rgb(27, 27, 30);
-    // --mask-bg: rgb(68, 69, 70);
-    // --main-border-color: rgb(44, 45, 45);
-
-    // new
     --main-bg: rgb(40, 48, 68);
     --mask-bg: rgb(55, 63, 83);
     --main-border-color: rgb(30, 36, 51);
   
     /* Common color */
-
-    // original
-    // --text-color: rgb(175, 176, 177);
-    // --text-muted-color: #868686;
-    // --text-muted-hightlight-color: #aeaeae;
-
-    // new
     --text-color: rgb(241, 236, 206);
     --text-muted-color: #B5B19B;
     --text-muted-hightlight-color: #D3D0B4;
-
-    // original
-    // --heading-color: #cccccc;
-
-    // new
     --heading-color: #f3de8a;
-
     --label-color: #a7a7a7;
     --blockquote-border-color: rgb(66, 66, 66);
     --blockquote-text-color: #868686;
