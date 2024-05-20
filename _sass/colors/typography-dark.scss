@@ -2,147 +2,152 @@
  * The main dark mode styles
  */
 
- @mixin dark-scheme {
-    /* Framework color */
+@mixin dark-scheme {
+  /* Framework color */
 
-    --main-bg: rgb(40, 48, 68);
-    --mask-bg: rgb(55, 63, 83);
-    --main-border-color: rgb(30, 36, 51);
-  
-    /* Common color */
-    --text-color: rgb(241, 236, 206);
-    --text-muted-color: #B5B19B;
-    --text-muted-hightlight-color: #D3D0B4;
-    --heading-color: #f3de8a;
-    --label-color: #a7a7a7;
-    --blockquote-border-color: rgb(66, 66, 66);
-    --blockquote-text-color: #868686;
-    --link-color: rgb(138, 180, 248);
-    --link-underline-color: rgb(82, 108, 150);
-    --button-bg: #1e1e1e;
-    --btn-border-color: #2e2f31;
-    --btn-backtotop-color: var(--text-color);
-    --btn-backtotop-border-color: #212122;
-    --btn-box-shadow: var(--main-bg);
-    --card-header-bg: #292929;
-    --checkbox-color: rgb(118, 120, 121);
-    --checkbox-checked-color: var(--link-color);
-    --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
-    --shimmer-bg: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(58, 55, 55, 0.4) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  
-    /* Sidebar */
-    --site-title-color: #717070;
-    --site-subtitle-color: #868686;
-    --sidebar-bg: #1e1e1e;
-    --sidebar-border-color: #292929;
-    --sidebar-muted-color: #868686;
-    --sidebar-active-color: rgb(255, 255, 255, 0.95);
-    --sidebar-hover-bg: #262626;
-    --sidebar-btn-bg: #232328;
-    --sidebar-btn-color: #787878;
-    --avatar-border-color: rgb(206, 206, 206, 0.9);
-  
-    /* Topbar */
-    --topbar-bg: rgb(27, 27, 30, 0.64);
-    --topbar-text-color: var(--text-color);
-    --search-border-color: rgb(55, 55, 55);
-    --search-icon-color: rgb(100, 102, 105);
-    --input-focus-border-color: rgb(112, 114, 115);
-  
-    /* Home page */
-    --post-list-text-color: rgb(175, 176, 177);
-    --btn-patinator-text-color: var(--text-color);
-    --btn-paginator-hover-color: #2e2e2e;
-  
-    /* Posts */
-    --toc-highlight: rgb(116, 178, 243);
-    --tag-hover: rgb(43, 56, 62);
-    --tb-odd-bg: #252526; /* odd rows of the posts' table */
-    --tb-even-bg: rgb(31, 31, 34); /* even rows of the posts' table */
-    --tb-border-color: var(--tb-odd-bg);
-    --footnote-target-bg: rgb(63, 81, 181);
-    --btn-share-color: #6c757d;
-    --btn-share-hover-color: #bfc1ca;
-    --card-bg: #1e1e1e;
-    --card-hovor-bg: #464d51;
-    --card-shadow: rgb(21, 21, 21, 0.72) 0 6px 18px 0,
-      rgb(137, 135, 135, 0.24) 0 0 0 1px;
-    --kbd-wrap-color: #6a6a6a;
-    --kbd-text-color: #d3d3d3;
-    --kbd-bg-color: #242424;
-    --prompt-text-color: rgb(216, 212, 212, 0.75);
-    --prompt-tip-bg: rgb(22, 60, 36, 0.64);
-    --prompt-tip-icon-color: rgb(15, 164, 15, 0.81);
-    --prompt-info-bg: rgb(7, 59, 104, 0.8);
-    --prompt-info-icon-color: #0075d1;
-    --prompt-warning-bg: rgb(90, 69, 3, 0.88);
-    --prompt-warning-icon-color: rgb(255, 165, 0, 0.8);
-    --prompt-danger-bg: rgb(86, 28, 8, 0.8);
-    --prompt-danger-icon-color: #cd0202;
-  
-    /* tags */
-    --tag-border: rgb(59, 79, 88);
-    --tag-shadow: rgb(32, 33, 33);
-    --dash-color: rgb(63, 65, 68);
-    --search-tag-bg: #292828;
-  
-    /* categories */
-    --categories-border: rgb(64, 66, 69, 0.5);
-    --categories-hover-bg: rgb(73, 75, 76);
-    --categories-icon-hover-color: white;
-  
-    /* archives */
-    --timeline-node-bg: rgb(150, 152, 156);
-    --timeline-color: rgb(63, 65, 68);
-    --timeline-year-dot-color: var(--timeline-color);
-  
-    .light {
-      display: none;
+  --main-bg: rgb(40, 48, 68);
+  --mask-bg: rgb(55, 63, 83);
+  --main-border-color: rgb(30, 36, 51);
+
+  /* Common color */
+  --text-color: rgb(241, 236, 206);
+  --text-muted-color: #b5b19b;
+  --text-muted-hightlight-color: #d3d0b4;
+  --heading-color: #f3de8a;
+
+  --label-color: #f1ecce;
+  --blockquote-border-color: rgb(40, 48, 68);
+  --blockquote-text-color: #b3c6f1;
+  --link-color: #b3c6f1;
+  --link-underline-color: #283044;
+
+  --button-bg: #283044;
+  --btn-border-color: #1f2735;
+  --btn-backtotop-color: var(--text-color);
+  --btn-backtotop-border-color: #283044;
+  --btn-box-shadow: var(--main-bg);
+
+  --card-header-bg: #283044;
+  --checkbox-color: rgb(241, 236, 206);
+  --checkbox-checked-color: var(--link-color);
+  --img-bg: radial-gradient(circle, rgb(32, 40, 56) 0%, rgb(40, 48, 68) 100%);
+  --shimmer-bg: linear-gradient(
+    90deg,
+    rgba(241, 236, 206, 0) 0%,
+    rgba(40, 48, 68, 0.4) 50%,
+    rgba(241, 236, 206, 0) 100%
+  );
+
+  /* Sidebar */
+  --site-title-color: #f3de8a;
+  --site-subtitle-color: #f1ecce;
+  --sidebar-bg: #1e263a;
+  --sidebar-border-color: #1f2735;
+  --sidebar-muted-color: #f1ecce;
+  --sidebar-active-color: rgb(241, 236, 206, 0.95);
+  --sidebar-hover-bg: #1f2735;
+  --sidebar-btn-bg: #1f2735;
+  --sidebar-btn-color: #f1ecce;
+  --avatar-border-color: rgb(241, 236, 206, 0.9);
+
+  /* Topbar */
+  --topbar-bg: rgb(30, 38, 58, 0.64);
+  --topbar-text-color: var(--text-color);
+  --search-border-color: rgb(40, 48, 68);
+  --search-icon-color: rgb(241, 236, 206);
+  --input-focus-border-color: rgb(243, 222, 138);
+
+  /* Home page */
+  --post-list-text-color: rgb(241, 236, 206);
+  --btn-patinator-text-color: var(--text-color);
+  --btn-paginator-hover-color: #1f2735;
+
+  /* Posts */
+  --toc-highlight: rgb(179, 198, 241);
+  --tag-hover: rgb(31, 39, 53);
+  --tb-odd-bg: #283044; /* odd rows of the posts' table */
+  --tb-even-bg: rgb(30, 38, 58); /* even rows of the posts' table */
+  --tb-border-color: var(--tb-odd-bg);
+
+  --footnote-target-bg: rgb(179, 198, 241);
+  --btn-share-color: #f1ecce;
+  --btn-share-hover-color: #f6c4de;
+  --card-bg: #283044;
+  --card-hovor-bg: #1f2735;
+  --card-shadow: rgba(30, 38, 58, 0.72) 0 6px 18px 0,
+    rgba(112, 114, 115, 0.24) 0 0 0 1px;
+
+  --kbd-wrap-color: #f1ecce;
+  --kbd-text-color: #f3de8a;
+  --kbd-bg-color: #283044;
+  --prompt-text-color: rgba(241, 236, 206, 1);
+  --prompt-tip-bg: rgba(162, 250, 163, 0.64);
+  --prompt-tip-icon-color: rgba(32, 89, 36, 0.81);
+  --prompt-info-bg: rgba(179, 198, 241, 0.8);
+  --prompt-info-icon-color: #0075d1;
+  --prompt-warning-bg: rgba(236, 78, 32, 0.88);
+  --prompt-warning-icon-color: rgba(150, 45, 0, 0.8); 
+  --prompt-danger-bg: rgba(205, 2, 2, 0.8);
+  --prompt-danger-icon-color: #8B0000;
+
+  /* tags */
+  --tag-border: rgb(59, 79, 88);
+  --tag-shadow: rgb(32, 33, 33);
+  --dash-color: rgb(63, 65, 68);
+  --search-tag-bg: #292828;
+
+  /* categories */
+  --categories-border: rgb(64, 66, 69, 0.5);
+  --categories-hover-bg: rgb(73, 75, 76);
+  --categories-icon-hover-color: white;
+
+  /* archives */
+  --timeline-node-bg: rgb(150, 152, 156);
+  --timeline-color: rgb(63, 65, 68);
+  --timeline-year-dot-color: var(--timeline-color);
+
+  .light {
+    display: none;
+  }
+
+  /* categories */
+  .categories.card,
+  .list-group-item {
+    background-color: var(--card-bg);
+  }
+
+  .categories {
+    .card-header {
+      background-color: var(--card-header-bg);
     }
-  
-    /* categories */
-    .categories.card,
+
     .list-group-item {
-      background-color: var(--card-bg);
-    }
-  
-    .categories {
-      .card-header {
-        background-color: var(--card-header-bg);
-      }
-  
-      .list-group-item {
-        border-left: none;
-        border-right: none;
-        padding-left: 2rem;
-        border-color: var(--categories-border);
-  
-        &:last-child {
-          border-bottom-color: var(--card-bg);
-        }
+      border-left: none;
+      border-right: none;
+      padding-left: 2rem;
+      border-color: var(--categories-border);
+
+      &:last-child {
+        border-bottom-color: var(--card-bg);
       }
     }
-  
-    #archives li:nth-child(odd) {
-      background-image: linear-gradient(
-        to left,
-        rgb(26, 26, 30),
-        rgb(39, 39, 45),
-        rgb(39, 39, 45),
-        rgb(39, 39, 45),
-        rgb(26, 26, 30)
-      );
-    }
-  
-    color-scheme: dark;
-  
-    /* stylelint-disable-next-line selector-id-pattern */
-    #disqus_thread {
-      color-scheme: none;
-    }
-  } /* dark-scheme */
+  }
+
+  #archives li:nth-child(odd) {
+    background-image: linear-gradient(
+      to left,
+      rgb(26, 26, 30),
+      rgb(39, 39, 45),
+      rgb(39, 39, 45),
+      rgb(39, 39, 45),
+      rgb(26, 26, 30)
+    );
+  }
+
+  color-scheme: dark;
+
+  /* stylelint-disable-next-line selector-id-pattern */
+  #disqus_thread {
+    color-scheme: none;
+  }
+} /* dark-scheme */
