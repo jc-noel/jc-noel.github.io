@@ -86,24 +86,24 @@
   --prompt-info-bg: rgba(179, 198, 241, 0.8);
   --prompt-info-icon-color: #0075d1;
   --prompt-warning-bg: rgba(236, 78, 32, 0.88);
-  --prompt-warning-icon-color: rgba(150, 45, 0, 0.8); 
+  --prompt-warning-icon-color: rgba(150, 45, 0, 0.8);
   --prompt-danger-bg: rgba(205, 2, 2, 0.8);
-  --prompt-danger-icon-color: #8B0000;
+  --prompt-danger-icon-color: #8b0000;
 
   /* tags */
-  --tag-border: rgb(59, 79, 88);
-  --tag-shadow: rgb(32, 33, 33);
-  --dash-color: rgb(63, 65, 68);
-  --search-tag-bg: #292828;
+  --tag-border: rgb(40, 48, 68);
+  --tag-shadow: rgb(31, 39, 53);
+  --dash-color: rgb(241, 236, 206);
+  --search-tag-bg: #1f2735;
 
   /* categories */
-  --categories-border: rgb(64, 66, 69, 0.5);
-  --categories-hover-bg: rgb(73, 75, 76);
+  --categories-border: rgba(40, 48, 68, 0.5);
+  --categories-hover-bg: rgb(31, 39, 53);
   --categories-icon-hover-color: white;
 
   /* archives */
-  --timeline-node-bg: rgb(150, 152, 156);
-  --timeline-color: rgb(63, 65, 68);
+  --timeline-node-bg: rgb(241, 236, 206);
+  --timeline-color: rgb(243, 222, 138);
   --timeline-year-dot-color: var(--timeline-color);
 
   .light {
@@ -136,11 +136,11 @@
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
       to left,
-      rgb(26, 26, 30),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(26, 26, 30)
+      rgb(30, 38, 58),
+      rgb(40, 48, 68),
+      rgb(40, 48, 68),
+      rgb(40, 48, 68),
+      rgb(30, 38, 58)
     );
   }
 
