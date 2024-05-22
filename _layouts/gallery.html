@@ -5,28 +5,41 @@ layout: page
 
 {% include lang.html %}
 
-<ul>
+<div class="gallery">
   {% for image in site.data.imgur-images %}
-    <li>
-      <img src="{{ image.link }}" alt="Gallery Image" width="{{ image.width }}" height="{{ image.height }}">
+    <div class="gallery-item">
+      <img src="{{ image.link }}" alt="Gallery Image">
       <p>Uploaded on: {{ image.datetime | date: "%Y-%m-%d" }}</p>
-    </li>
+    </div>
   {% else %}
-    <li>No images found in imgur_images.json</li>
+    <p>No images found in Imgur-images.json</p>
   {% endfor %}
-</ul>
-
+</div>
 
 <style>
   .gallery {
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
   }
   .gallery-item {
-    margin: 10px;
+    flex: 1 1 calc(33.333% - 16px);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
   .gallery-item img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    display: block;
+  }
+  .gallery-item p {
+    padding: 8px;
+    margin: 0;
+    background: #f7f7f7;
+    border-top: 1px solid #ddd;
   }
 </style>
