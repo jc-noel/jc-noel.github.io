@@ -2,3 +2,31 @@
 layout: page
 # Gallery of imgur images
 ---
+
+<div class="gallery">
+  {% for image in site.data.imgur_images %}
+  <div class="gallery-item">
+    <img
+      src="{{ image.link }}"
+      alt="Gallery Image"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+    />
+    <p>Uploaded on: {{ image.datetime | date: "%Y-%m-%d" }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery-item {
+    margin: 10px;
+  }
+  .gallery-item img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
