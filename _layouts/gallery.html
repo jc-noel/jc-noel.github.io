@@ -3,19 +3,23 @@ layout: page
 # Gallery of imgur images
 ---
 
-<div class="gallery">
+{% include lang.html %}
+
+{{ content }}
+
+<p>Data check:</p>
+
+<ul>
   {% for image in site.data.imgur_images %}
-  <div class="gallery-item">
-    <img
-      src="{{ image.link }}"
-      alt="Gallery Image"
-      width="{{ image.width }}"
-      height="{{ image.height }}"
-    />
-    <p>Uploaded on: {{ image.datetime | date: "%Y-%m-%d" }}</p>
-  </div>
+    <li>
+      <img src="{{ image.link }}" alt="Gallery Image" width="{{ image.width }}" height="{{ image.height }}">
+      <p>Uploaded on: {{ image.datetime | date: "%Y-%m-%d" }}</p>
+    </li>
+  {% else %}
+    <li>No images found in imgur_images.json</li>
   {% endfor %}
-</div>
+</ul>
+
 
 <style>
   .gallery {
