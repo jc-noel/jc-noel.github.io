@@ -5,12 +5,8 @@ layout: page
 
 {% include lang.html %}
 
-{{ content }}
-
-<p>Data check:</p>
-
 <ul>
-  {% for image in site.data.imgur_images %}
+  {% for image in site.data.imgur-images %}
     <li>
       <img src="{{ image.link }}" alt="Gallery Image" width="{{ image.width }}" height="{{ image.height }}">
       <p>Uploaded on: {{ image.datetime | date: "%Y-%m-%d" }}</p>
