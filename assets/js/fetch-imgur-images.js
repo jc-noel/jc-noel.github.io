@@ -4,7 +4,7 @@ const path = require('path');
 
 const clientId = process.env.IMGUR_CLIENT_ID;
 const albumId = process.env.IMGUR_ALBUM_ID;
-const dataFilePath = path.join(__dirname, '_data', 'imgur-images.json');
+const dataFilePath = path.join(__dirname,'..', '..', '_data', 'imgur-images.json');
 
 const fetchImgurImages = async () => {
   try {
