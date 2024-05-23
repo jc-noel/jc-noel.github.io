@@ -32,9 +32,9 @@ const fetchImgurImages = async () => {
 
       if (newData !== oldData) {
         fs.writeFileSync(dataFilePath, newData);
-        console.log('Successfully updated imgur_images.json');
+        console.log('Successfully updated imgur-images.json');
       } else {
-        console.log('No changes detected in imgur_images.json');
+        console.log('No changes detected in imgur-images.json');
       }
     } else {
       console.error('Failed to fetch images:', response.status);
