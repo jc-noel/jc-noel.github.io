@@ -1,7 +1,8 @@
 <div class="gallery">
     {% for image in site.data.imgur-images %}
-    <a href="https://placehold.co/{{image.width}}x{{image.height}}" class="popup img-link">
-        <img src="https://placehold.co/{{image.width}}x{{image.height}}"/>
+    <a href="{{image.link}}" class="popup img-link">
+        <img src="{{image.link}}" width="{{image.width}}" height="{{image.height}}"/>
+        <p>Uploaded on: {{ image.datetime | date: "%Y-%m-%d" }}</p>
     </a>
     {% endfor %}
 </div>
