@@ -2,10 +2,8 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-// const clientId = process.env.IMGUR_CLIENT_ID;
-const clientId = "4438e69d253337d";
-// const albumId = process.env.IMGUR_ALBUM_ID;
-const albumId = "VhGbKPe";
+const clientId = process.env.IMGUR_CLIENT_ID;
+const albumId = process.env.IMGUR_ALBUM_ID;
 const dataFilePath = path.join(__dirname,'..', '..', '_data', 'imgur-images.json');
 
 const fetchImgurImages = async () => {
