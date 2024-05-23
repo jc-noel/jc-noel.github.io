@@ -39,4 +39,4 @@ mathjax:
   js: /assets/lib/mathjax/tex-chtml.js
 
 masonry:
-  js: /assets/lib/masonry/masonry.pkgd.min.js
+  js: /assets/js/masonry/masonry.pkgd.min.js
