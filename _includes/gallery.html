@@ -1,8 +1,8 @@
 <div class="gallery">
-    {% for image in site.data.imgur-images %}
+    {% for image in site.data.sample-images %}
     <div class="gallery-item">
         <a href="{{image.link}}" class="popup img-link">
-            <img src="{{image.link}}" width="{{image.width}}" height="{{image.height}}" alt=""/>
+            <img src="{{image.link}}" alt=""/>
         </a>
     </div>
     {% endfor %}
