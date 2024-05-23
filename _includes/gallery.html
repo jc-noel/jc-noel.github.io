@@ -1,0 +1,7 @@
+<div class="gallery">
+    {% for image in site.data.imgur-images %}
+    <a href="https://placehold.co/{{image.width}}x{{image.height}}" class="popup img-link">
+        <img src="https://placehold.co/{{image.width}}x{{image.height}}"/>
+    </a>
+    {% endfor %}
+</div>
