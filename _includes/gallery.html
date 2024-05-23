@@ -1,9 +1,12 @@
-<div class="gallery">
-    {% for image in site.data.sample-images %}
-    <div class="gallery-item">
-        <a href="{{image.link}}" class="popup img-link">
-            <img src="{{image.link}}" alt=""/>
-        </a>
-    </div>
-    {% endfor %}
+<div
+  class="gallery"
+  data-masonry='{ "itemSelector": ".gallery-item", "columnWidth": ".gallery-item", "percentPosition": true, "gutter": 10, "horizontalOrder": true }'
+>
+  {% for image in site.data.imgur-images %}
+  <div class="gallery-item">
+    <a href="{{image.link}}" class="popup img-link">
+      <img src="{{image.link}}" height="300" width="300" alt="" />
+    </a>
+  </div>
+  {% endfor %}
 </div>
