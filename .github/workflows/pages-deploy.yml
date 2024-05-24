@@ -104,3 +104,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # Deploy the site to GitHub Pages
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Use GitHub Token for authentication
