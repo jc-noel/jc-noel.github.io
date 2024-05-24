@@ -10,7 +10,7 @@ on:
       - main # Runs on pushes to the main branch
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
