@@ -1,11 +1,19 @@
+<div class="btn-group mb-2">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Tags
+  </button>
+  <div class="dropdown-menu" id="tagDropdown">
+    <a href="#" class="dropdown-item" data-tag="">All</a>
+  </div>
+</div>
 <div
   class="gallery"
   data-masonry='{ "itemSelector": ".gallery-item", "columnWidth": ".gallery-item", "percentPosition": true, "gutter": 10, "horizontalOrder": true }'
 >
   {% for image in site.data.imgur-images %}
-  <div class="gallery-item">
-    <a href="{{image.link}}" class="popup img-link">
-      <img src="{{image.link}}" height="{{image.height}}" width="{{image.width}}" alt="" />
+  <div class="gallery-item" data-tags="{{ image.tags | join: ' ' }}">
+    <a href="{{ image.link }}" class="popup img-link">
+      <img src="{{ image.link }}" height="{{ image.height }}" width="{{ image.width }}" alt="" />
     </a>
   </div>
   {% endfor %}

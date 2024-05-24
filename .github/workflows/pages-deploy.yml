@@ -1,39 +1,69 @@
-name: "Build and Deploy"
+name: Update Imgur Images and Deploy Site
+
+# Define the events that trigger the workflow
 on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch: # Allows manual triggering of the workflow
   push:
     branches:
-      - main
-      - master
-    paths-ignore:
-      - .gitignore
-      - README.md
-      - LICENSE
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+      - main # Runs on pushes to the main branch
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Ensure only one deployment at a time
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
+  # Job to update Imgur images
+  update-images:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Fetch all history for all branches and tags
+        submodules: # true # Uncomment if using submodules
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Use Node.js version 14
+
+    - name: Install dependencies
+      run: npm install # Install npm dependencies
+
+    - name: Fetch Imgur images and update JSON
+      run: node assets/js/fetch-imgur-images.js # Run the script to fetch Imgur images
+      env:
+        IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }} # Use Imgur Client ID from secrets
+        IMGUR_ALBUM_ID: ${{ secrets.IMGUR_ALBUM_ID }} # Use Imgur Album ID from secrets
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git diff-index --quiet HEAD || git commit -m 'Update Imgur images' # Commit changes if there are any
+        git push # Push changes to the repository
+
+  # Job to build the Jekyll site
   build:
     runs-on: ubuntu-latest
+    needs: update-images # Ensure the update-images job completes first
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          submodules: # true
-          # If using the 'assets' git submodule from Chirpy Starter, uncomment above
-          # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
+          fetch-depth: 0 # Fetch all history for all branches and tags
+          submodules: # true # Uncomment if using submodules
 
       - name: Setup Pages
         id: pages
@@ -42,32 +72,33 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3
-          bundler-cache: true
+          ruby-version: 3.3 # Use Ruby version 3.3
+          bundler-cache: true # Enable caching for bundler
 
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" # Build the Jekyll site
         env:
-          JEKYLL_ENV: "production"
+          JEKYLL_ENV: "production" # Set environment to production
 
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
-            \-\-disable-external \
-            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+            --disable-external \
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/" # Test the built site
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site${{ steps.pages.outputs.base_path }}"
+          path: "_site${{ steps.pages.outputs.base_path }}" # Upload the site artifact
 
+  # Job to deploy the Jekyll site to GitHub Pages
   deploy:
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages # Define the deployment environment
+      url: ${{ steps.deployment.outputs.page_url }} # Set the deployment URL
     runs-on: ubuntu-latest
-    needs: build
+    needs: build # Ensure the build job completes first
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 # Deploy the site to GitHub Pages

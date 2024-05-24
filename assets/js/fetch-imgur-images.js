@@ -22,6 +22,9 @@ const fetchImgurImages = async () => {
         width: image.width,
         height: image.height,
         datetime: image.datetime,
+        title: image.title,
+        description: image.description,
+        tags: image.tags,
       }));
       const newData = JSON.stringify(images, null, 2);
 
