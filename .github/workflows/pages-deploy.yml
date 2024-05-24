@@ -46,6 +46,8 @@ jobs:
         IMGUR_ALBUM_ID: ${{ secrets.IMGUR_ALBUM_ID }} # Use Imgur Album ID from secrets
 
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use GitHub Token for authentication
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
