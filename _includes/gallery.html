@@ -1,6 +1,6 @@
 <div
   class="gallery"
-  data-masonry='{ "itemSelector": ".gallery-item", "columnWidth": ".gallery-item", "percentPosition": true, "gutter": 10, "horizontalOrder": true }'
+  data-masonry='{ "itemSelector": ".gallery-item", "percentPosition": true, "columnWidth": 20, "gutter": 20, "horizontalOrder": true, "stagger": 30 }'
 >
   {% for image in site.data.imgur-images %}
   <div class="gallery-item" data-tags="{{ image.tags | join: ' ' }}">
