@@ -1530,3 +1530,73 @@ html {
       }
     }
   } /* min-width: 1650px */
+
+
+ // Gallery styles
+.gallery {
+  .gallery-item {
+    margin-bottom: 1rem; // Add space between items
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--main-border-color);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: var(--card-shadow-hover);
+      }
+
+      .card-img-top {
+        border-bottom: 1px solid var(--main-border-color);
+      }
+
+      .card-body {
+        color: var(--text-color);
+
+        .card-title {
+          color: var(--heading-color);
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+          color: var(--text-muted-color);
+        }
+      }
+    }
+
+    .popup {
+      &:hover img {
+        filter: brightness(80%);
+      }
+    }
+
+    // Apply a shimmer effect when images are loading
+    .shimmer {
+      overflow: hidden;
+      position: relative;
+      background: var(--img-bg);
+
+      &::before {
+        content: '';
+        position: absolute;
+        background: var(--shimmer-bg);
+        height: 100%;
+        width: 100%;
+        animation: shimmer 1.3s infinite;
+      }
+    }
+  }
+
+  // Shimmer animation keyframes
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

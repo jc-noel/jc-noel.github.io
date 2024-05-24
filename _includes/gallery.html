@@ -1,12 +1,12 @@
-<div
-  class="gallery"
-  data-masonry='{ "itemSelector": ".gallery-item", "percentPosition": true, "columnWidth": 20, "gutter": 20, "horizontalOrder": true, "stagger": 30 }'
->
+<div class="gallery" data-masonry='{ "itemSelector": ".gallery-item", "percentPosition": true, "columnWidth": 20, "gutter": 10, "horizontalOrder": true, "stagger": 30 }'>
   {% for image in site.data.imgur-images %}
   <div class="gallery-item" data-tags="{{ image.tags | join: ' ' }}">
-    <a href="{{ image.link }}" class="popup img-link">
-      <img src="{{ image.link }}" height="{{ image.height }}" width="{{ image.width }}" alt="" />
-    </a>
+    <div class="card">
+      <img src="{{ image.link }}" class="popup img-link mt-0" height="{{ image.height }}" width="{{ image.width }}" alt="{{ image.description }}" />
+      <div class="card-body py-0 text-center">
+        <p class="card-title mt-0">{{ image.title }}</p>
+      </div>
+    </div>
   </div>
   {% endfor %}
 </div>
