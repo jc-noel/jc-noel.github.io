@@ -1554,6 +1554,8 @@ html {
 
       .card-body {
         color: var(--text-color);
+        padding-top: 0;
+        padding-bottom: 0;
 
         .card-title {
           color: var(--heading-color);
