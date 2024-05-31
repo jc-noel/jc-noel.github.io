@@ -45,6 +45,9 @@ jobs:
         IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }} # Use Imgur Client ID from secrets
         IMGUR_ALBUM_ID: ${{ secrets.IMGUR_ALBUM_ID }} # Use Imgur Album ID from secrets
 
+    - name: Pull latest changes
+      run: git pull origin main # Pull latest changes from the main branch
+      
     - name: Commit and push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use GitHub Token for authentication
